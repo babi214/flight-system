@@ -1,0 +1,10 @@
+from django.apps import AppConfig
+
+
+class FlightsConfig(AppConfig):
+    default_auto_field = 'django.db.models.BigAutoField'
+    name = 'apps.flights'
+    verbose_name = 'Flight Management'
+    
+    def ready(self):
+        import apps.flights.signals
